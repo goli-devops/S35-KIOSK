@@ -82,14 +82,14 @@ setInterval(() => {
     driveinWeekendElement.style.display = "none"
   }
 
-  // Show ONP (Overnight Promo) from 6:00pm to 6:00am, Sunday to Fri
-  if (
-    // Sunday 6:00pm to midnight
-    (currentDay === 0 && currentHour >= 18) ||
-    // Monday to Thursday 9:00pm to midnight
-    (currentDay >= 1 && currentDay <= 4 && currentHour >= 18) ||
-    // Monday to Friday 12:00am to 5:59am
-    (currentDay >= 1 && currentDay <= 5 && currentHour < 6)
+// Show ONP (Overnight Promo) from 8:00pm to 6:00am, Sunday to Fri
+if (
+  // Sunday 8:00pm to midnight
+  (currentDay === 0 && currentHour >= 20) || 
+  // Monday to Thursday 8:00pm to midnight
+  (currentDay >= 1 && currentDay <= 4 && currentHour >= 20) ||
+  // Monday to Friday 12:00am to 5:59am
+  (currentDay >= 1 && currentDay <= 5 && currentHour < 6)
   ) {
     regularTen.style.display = "none"
     driveinRegularTen.style.display = "none"
