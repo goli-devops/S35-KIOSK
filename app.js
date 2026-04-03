@@ -101,8 +101,9 @@ if (
     regularTen.style.display = "table-row"
     driveinRegularTen.style.display = "table-row"
   }
-// Show 2HRS PRO Monday–Sunday, 5AM–10:59AM
-if (currentHour >= 5 && currentHour <= 10) {
+// Show 2HRS PRO Monday–Thursday, 5AM–10:59AM
+if (currentHour >= 5 && currentHour <= 10 &&
+   currentDay >= 1 && currentDay <= 4) {
   twoHrsPro.style.display = "table-row";
 } else {
   twoHrsPro.style.display = "none";
