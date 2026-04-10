@@ -32,7 +32,7 @@ setInterval(() => {
   let driveinRegularTen = document.getElementById("drivein-regular-ten")
   let driveinOnp = document.getElementById("drivein-onp")
   //for 2HRS PRO
-  let twoHrsPro = document.getElementById("2HRSPRO")
+  let twoHrsPro = document.getElementById("TWOHRSPRO")
   // ---- HOLIDAY LIST ----
   const holidayDates = [
     "2026-12-31", // New Year's Eve
