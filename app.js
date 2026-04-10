@@ -13,7 +13,8 @@ setInterval(() => {
     hour12: true,
   }
   //for 2HRS PRO
-  let twohrsPro = document.getElementById("twoHrsPro")
+  let twohrsProwe = document.getElementById("twohrsprowe")
+  let twohrsProwd = document.getElementById("twohrsprowd")
 
   // Format the date and time according to the options
   let newDate = date.toLocaleString("en-US", options)
@@ -105,9 +106,11 @@ if (
 if (
   (currentDay <= 10 && currentHour >= 8)
   ) {
-  twohrsPro.style.display = "table-row"
+  twohrsProwd.style.display = "table-row"
+  twohrsProwe.style.display = "table-row"
 } else {
-  twohrsPro.style.display = "none"
+  twohrsProwd.style.display = "none"
+  twohrsProwe.style.display = "none"
 }
 }, 1000) // Update every second
 
