@@ -13,8 +13,8 @@ setInterval(() => {
     hour12: true,
   }
   //for 2HRS PRO
-  let twohrsProwe = document.getElementById("twohrsprowe")
-  let twohrsProwd = document.getElementById("twohrsprowd")
+   let twohrsProWeekday = document.getElementById("twoHrsPro-weekday")
+  let twohrsProWeekend = document.getElementById("twoHrsPro-weekend")
 
   // Format the date and time according to the options
   let newDate = date.toLocaleString("en-US", options)
@@ -104,13 +104,13 @@ if (
   }
 // Show 2HRS PRO Monday–Sunday, 5AM–10:59AM
 if (
-  (currentDay <= 10 && currentHour >= 8)
+  (currentDay >= 8 && currentHour <= 10)
   ) {
-  twohrsProwd.style.display = "table-row"
-  twohrsProwe.style.display = "table-row"
+  twohrsProWeekday.style.display = "table-row"
+  twohrsProWeekend.style.display = "table-row"
 } else {
-  twohrsProwd.style.display = "none"
-  twohrsProwe.style.display = "none"
+  twohrsProWeekday.style.display = "none"
+  twohrsProWeekend.style.display = "none"
 }
 }, 1000) // Update every second
 
