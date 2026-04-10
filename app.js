@@ -104,7 +104,7 @@ if (
   }
 // Show 2HRS PRO Monday–Sunday, 5AM–10:59AM
 if (
-  (currentDay >= 8 && currentHour <= 10)
+  (currentDay >= 5 && currentHour <= 10)
   ) {
   twohrsProWeekday.style.display = "table-row"
   twohrsProWeekend.style.display = "table-row"
