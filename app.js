@@ -32,7 +32,7 @@ setInterval(() => {
   let driveinRegularTen = document.getElementById("drivein-regular-ten")
   let driveinOnp = document.getElementById("drivein-onp")
   //for 2HRS PRO
-  let twoHrsPro = document.getElementById("TWOHRSPRO")
+  let twoHrsPro = document.getElementById("twoHrsPro")
   // ---- HOLIDAY LIST ----
   const holidayDates = [
     "2026-12-31", // New Year's Eve
@@ -104,7 +104,7 @@ if (
 // Show 2HRS PRO Monday–Sunday, 5AM–10:59AM
 if (
   (currentHour >= 5 && currentHour <= 10)
-  ){
+  ) {
   twoHrsPro.style.display = "table-row"
 } else {
   twoHrsPro.style.display = "none"
