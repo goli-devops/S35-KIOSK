@@ -12,7 +12,8 @@ setInterval(() => {
     second: "2-digit",
     hour12: true,
   }
-
+  //for 2HRS PRO
+  let twohrsPro = document.getElementById("twoHrsPro")
 
   // Format the date and time according to the options
   let newDate = date.toLocaleString("en-US", options)
@@ -31,8 +32,7 @@ setInterval(() => {
   let regularTen = document.getElementById("regular-ten")
   let driveinRegularTen = document.getElementById("drivein-regular-ten")
   let driveinOnp = document.getElementById("drivein-onp")
-  //for 2HRS PRO
-  let twohrsPro = document.getElementById("twoHrsPro")
+
   // ---- HOLIDAY LIST ----
   const holidayDates = [
     "2026-12-31", // New Year's Eve
