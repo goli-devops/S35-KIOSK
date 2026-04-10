@@ -105,9 +105,9 @@ if (
 if (
   (currentHour >= 5 && currentHour <= 10)
   ){
-  twoHrsPro.style.display = "table-row";
+  twoHrsPro.style.display = "table-row"
 } else {
-  twoHrsPro.style.display = "none";
+  twoHrsPro.style.display = "none"
 }
 }, 1000) // Update every second
 
