@@ -13,7 +13,7 @@ setInterval(() => {
     hour12: true,
   }
   //for 2HRS PRO
-   let twohrsProWeekday = document.getElementById("twoHrsPro-weekday")
+  let twohrsProWeekday = document.getElementById("twoHrsPro-weekday")
   let twohrsProWeekend = document.getElementById("twoHrsPro-weekend")
 
   // Format the date and time according to the options
@@ -83,14 +83,14 @@ setInterval(() => {
     driveinWeekendElement.style.display = "none"
   }
 
-// Show ONP (Overnight Promo) from 8:00pm to 6:00am, Sunday to Fri
-if (
-  // Sunday 8:00pm to midnight
-  (currentDay === 0 && currentHour >= 20) || 
-  // Monday to Thursday 8:00pm to midnight
-  (currentDay >= 1 && currentDay <= 4 && currentHour >= 20) ||
-  // Monday to Friday 12:00am to 5:59am
-  (currentDay >= 1 && currentDay <= 5 && currentHour < 6)
+  // Show ONP (Overnight Promo) from 8:00pm to 6:00am, Sunday to Fri
+  if (
+    // Sunday 8:00pm to midnight
+    (currentDay === 0 && currentHour >= 20) ||
+    // Monday to Thursday 8:00pm to midnight
+    (currentDay >= 1 && currentDay <= 4 && currentHour >= 20) ||
+    // Monday to Friday 12:00am to 5:59am
+    (currentDay >= 1 && currentDay <= 5 && currentHour < 6)
   ) {
     regularTen.style.display = "none"
     driveinRegularTen.style.display = "none"
@@ -102,16 +102,22 @@ if (
     regularTen.style.display = "table-row"
     driveinRegularTen.style.display = "table-row"
   }
-// Show 2HRS PRO Monday–Sunday, 5AM–10:59AM
-if (
-  (currentDay >= 5 && currentHour <= 10)
+  // Show 2HRS PRO Monday–Sunday, 5AM–10:59AM
+  // Get minutes to handle the 10:01 cutoff
+  const currentMinute = date.getMinutes()
+
+  // Show 2HRS PRO Monday–Sunday, 5:00 AM to 10:00:59 AM
+  // It will disappear at exactly 10:01:00 AM
+  if (
+    (currentHour >= 5 && currentHour < 10) ||
+    (currentHour === 10 && currentMinute === 0)
   ) {
-  twohrsProWeekday.style.display = "table-row"
-  twohrsProWeekend.style.display = "table-row"
-} else {
-  twohrsProWeekday.style.display = "none"
-  twohrsProWeekend.style.display = "none"
-}
+    twohrsProWeekday.style.display = "table-row"
+    twohrsProWeekend.style.display = "table-row"
+  } else {
+    twohrsProWeekday.style.display = "none"
+    twohrsProWeekend.style.display = "none"
+  }
 }, 1000) // Update every second
 
 // DRIVEIN FUNCTIONS
